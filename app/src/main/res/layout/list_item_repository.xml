@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/textview_repository_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_margin"
+        android:layout_marginTop="@dimen/big_margin"
+        android:ellipsize="end"
+        android:maxLines="@integer/single_line_text"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/repository_owner_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Nome do repositório" />
+
+    <TextView
+        android:id="@+id/textview_repository_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="@integer/small_paragraph"
+        app:layout_constraintEnd_toEndOf="@id/textview_repository_name"
+        app:layout_constraintStart_toStartOf="@id/textview_repository_name"
+        app:layout_constraintTop_toBottomOf="@id/textview_repository_name"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec scelerisque neque nec neque interdum, ut consectetur odio convallis. Maecenas quis ultricies odio. Sed iaculis nunc ac ultrices condimentum." />
+
+    <ImageView
+        android:id="@+id/icon_repository_fork"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/big_margin"
+        android:contentDescription="@string/fork_icon_content_description"
+        android:src="@drawable/ic_repo_forked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textview_repository_description"
+        app:layout_constraintTop_toBottomOf="@id/textview_repository_description"/>
+
+    <TextView
+        android:id="@+id/textview_repository_fork_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:textColor="@color/orange_gold"
+        app:layout_constraintBottom_toBottomOf="@id/icon_repository_fork"
+        app:layout_constraintStart_toEndOf="@id/icon_repository_fork"
+        app:layout_constraintTop_toTopOf="@id/icon_repository_fork"
+        tools:text="215" />
+
+    <ImageView
+        android:id="@+id/icon_repository_star"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginStart="@dimen/big_margin"
+        android:contentDescription="@string/star_icon_content_description"
+        android:src="@drawable/ic_star"
+        app:layout_constraintBottom_toBottomOf="@id/icon_repository_fork"
+        app:layout_constraintStart_toEndOf="@id/textview_repository_fork_counter"
+        app:layout_constraintTop_toTopOf="@id/icon_repository_fork"/>
+
+    <TextView
+        android:id="@+id/textview_repository_star_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin"
+        android:textColor="@color/orange_gold"
+        app:layout_constraintBottom_toBottomOf="@id/icon_repository_fork"
+        app:layout_constraintStart_toEndOf="@id/icon_repository_star"
+        app:layout_constraintTop_toTopOf="@id/icon_repository_fork"
+        tools:text="251" />
+
+    <ImageView
+        android:id="@+id/repository_owner_avatar"
+        android:layout_width="@dimen/avatar_size"
+        android:layout_height="@dimen/avatar_size"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginStart="@dimen/big_margin"
+        android:layout_marginEnd="@dimen/big_margin"
+        android:contentDescription="@string/repository_avatar_content_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_repository_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/textview_repository_owner_username"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/textview_repository_owner_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="@integer/single_line_text"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="@dimen/highlighted_text_size"
+        android:layout_marginBottom="@dimen/big_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textview_repository_name"
+        app:layout_constraintTop_toBottomOf="@id/repository_owner_avatar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="username" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

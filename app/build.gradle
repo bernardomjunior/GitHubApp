@@ -1,0 +1,88 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.android.extensions'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.android.githubrepositories"
+        minSdk 24
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+
+        debug {
+            buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL", '"https://api.github.com"'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    sourceSets {
+        test {
+            resources {
+                srcDirs 'src\\test\\assets'
+            }
+        }
+    }
+
+}
+
+dependencies {
+    // glide
+    implementation Dependencies.glide
+
+    // retrofit
+    implementation Dependencies.retrofit
+    implementation Dependencies.gson
+
+    // Koin
+    implementation Dependencies.koin
+
+    // Testing
+    testImplementation Dependencies.koinTest
+    testImplementation Dependencies.koinTestJunit
+    testImplementation Dependencies.junit
+    testImplementation Dependencies.kotlinCoroutinesTest
+    testImplementation Dependencies.mockWebserver
+    androidTestImplementation Dependencies.junitTest
+    androidTestImplementation Dependencies.espresso
+
+    // android
+    implementation Dependencies.coreKtx
+    implementation Dependencies.appcompat
+    implementation Dependencies.material
+    implementation Dependencies.constraintlayout
+    implementation Dependencies.navGraph
+    implementation Dependencies.navigationUi
+    implementation Dependencies.viewModelLifeCycle
+    implementation Dependencies.runtimeLifeCycle
+}
