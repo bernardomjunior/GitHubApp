@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-internal data class RepositoryModel(
+data class RepositoryModel(
     val name: String,
     val description: String,
     val starCount: Int,

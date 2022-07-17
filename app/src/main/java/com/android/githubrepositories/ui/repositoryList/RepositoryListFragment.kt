@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.android.githubrepositories.R
@@ -61,8 +62,13 @@ internal class RepositoryListFragment : Fragment() {
 
     private fun setupFields() {
         binding.rvRepositoryList.adapter =
-            RepositoryListAdapter(repositoryList) {
-                repositoryViewModel.getRepositories(requestPage)
+            RepositoryListAdapter(
+                repositoryList,
+                { repositoryViewModel.getRepositories(requestPage) }
+            ) {
+                findNavController().navigate(
+                    RepositoryListFragmentDirections.actionRepositoryListFragmentToPullRequestFragment(it)
+                )
             }
         addListDivider(binding.rvRepositoryList)
     }

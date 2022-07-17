@@ -8,7 +8,7 @@ object Versions {
     const val appcompat = "1.4.2"
     const val material = "1.6.1"
     const val constraintlayout = "2.1.4"
-    const val navigation = "2.4.2"
+    const val navigation = "2.5.0"
     const val lifeCycle = "2.4.1"
     const val glide = "4.13.0"
     const val mockWebserver = "4.10.0"

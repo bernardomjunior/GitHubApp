@@ -7,6 +7,9 @@ import com.android.githubrepositories.domain.usecase.GetKotlinRepositoriesUseCas
 import com.android.githubrepositories.network.GithubApi
 import com.android.githubrepositories.network.GithubService
 import com.android.githubrepositories.data.GithubRepositoryImpl
+import com.android.githubrepositories.domain.usecase.ListRepositoryPullRequestsUseCase
+import com.android.githubrepositories.domain.usecase.ListRepositoryPullRequestsUseCaseImpl
+import com.android.githubrepositories.ui.pullRequest.PullRequestViewModel
 import com.android.githubrepositories.ui.repositoryList.RepositoryListViewModel
 import kotlinx.coroutines.Dispatchers
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -44,10 +47,18 @@ val appModule = module {
         GetKotlinRepositoriesUseCaseImpl(get())
     }
 
+    factory<ListRepositoryPullRequestsUseCase>{
+        ListRepositoryPullRequestsUseCaseImpl(get())
+    }
+
     // viewModel
 
     viewModel {
         RepositoryListViewModel(get(), Dispatchers.IO)
+    }
+
+    viewModel {
+        PullRequestViewModel(get(), Dispatchers.IO)
     }
 
 }

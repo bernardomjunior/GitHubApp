@@ -12,7 +12,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 internal class RepositoryListAdapter(
     private val repositoryList: List<RepositoryModel>,
-    private val loadMore: () -> Unit
+    private val loadMore: () -> Unit,
+    private val onItemClick: (RepositoryModel) -> Unit
 ): Adapter<RepositoryViewHolder>() {
 
     private val visibleThreshold = 5
@@ -39,6 +40,9 @@ internal class RepositoryListAdapter(
         private val binding: ListItemRepositoryBinding
     ) : ViewHolder(binding.root){
         fun bind(repository: RepositoryModel){
+            binding.root.setOnClickListener {
+                onItemClick(repository)
+            }
             binding.textviewRepositoryName.text = repository.name
             binding.textviewRepositoryDescription.text = repository.description
             binding.textviewRepositoryForkCounter.text = repository.forksCount.toString()
