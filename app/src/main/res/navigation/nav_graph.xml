@@ -8,7 +8,17 @@
     <fragment
         android:id="@+id/repositoryListFragment"
         android:name="com.android.githubrepositories.ui.repositoryList.RepositoryListFragment"
-        android:label="ListFragment"
-        tools:layout="@layout/fragment_repository_list"/>
+        android:label="RepositoryListFragment"
+        tools:layout="@layout/fragment_repository_list">
+        <action
+            android:id="@+id/action_repositoryListFragment_to_pullRequestFragment"
+            app:destination="@id/pullRequestFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pullRequestFragment"
+        android:name="com.android.githubrepositories.ui.pullRequest.PullRequestFragment"
+        android:label="PullRequestList"
+        tools:layout="@layout/fragment_pull_request"/>
 
 </navigation>

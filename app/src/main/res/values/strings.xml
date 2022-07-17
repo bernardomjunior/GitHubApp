@@ -8,6 +8,10 @@
     <string name="fork_icon_content_description">Repository fork count icon.</string>
     <!--  end region repositories  -->
 
+    <!--  begin region pullRequest  -->
+    <string name="pull_request_avatar_content_description">Pull request creator avatar image.</string>
+    <!--  end region pullRequest  -->
+
     <!--  begin region error  -->
     <string name="connection_problem">Could not connect with github.</string>
     <string name="unknown_error">An unexpected error occurred.</string>
