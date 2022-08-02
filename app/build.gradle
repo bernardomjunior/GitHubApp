@@ -74,8 +74,16 @@ dependencies {
     testImplementation Dependencies.junit
     testImplementation Dependencies.kotlinCoroutinesTest
     testImplementation Dependencies.mockWebserver
+    debugImplementation Dependencies.fragmentTest
     androidTestImplementation Dependencies.junitTest
     androidTestImplementation Dependencies.espresso
+    androidTestImplementation Dependencies.navigationTest
+    androidTestImplementation Dependencies.espressoContrib
+    androidTestImplementation Dependencies.archCore
+    androidTestImplementation Dependencies.mockk
+    androidTestImplementation Dependencies.koinTest
+    androidTestImplementation Dependencies.koinTestJunit
+//    androidTestImplementation "io.mockk:mockk-agent-jvm:1.13.0"
 
     // android
     implementation Dependencies.coreKtx

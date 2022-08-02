@@ -14,6 +14,9 @@ object Versions {
     const val mockWebserver = "4.10.0"
     const val kotlinCoroutinesTest = "1.4.2"
     const val navigationTest = "2.4.2"
+    const val fragmentTest = "1.5.1"
+    const val archCore = "2.1.0"
+    const val mockk = "1.13.0"
 }
 
 object Dependencies {
@@ -29,12 +32,16 @@ object Dependencies {
     const val junit = "junit:junit:${Versions.junit}"
     const val junitTest = "androidx.test.ext:junit:${Versions.junitExt}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+    const val espressoContrib = "androidx.test.espresso:espresso-contrib:${Versions.espresso}"
     const val mockWebserver = "com.squareup.okhttp3:mockwebserver:${Versions.mockWebserver}"
     const val kotlinCoroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinCoroutinesTest}"
     const val kotlinCoroutinesAndroidTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinCoroutinesTest}"
     const val navigationTest = "androidx.navigation:navigation-testing:${Versions.navigationTest}"
+    const val fragmentTest = "androidx.fragment:fragment-testing:${Versions.fragmentTest}"
+    const val mockk = "io.mockk:mockk-android:${Versions.mockk}"
 
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+    const val archCore = "androidx.arch.core:core-testing:${Versions.archCore}"
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     const val material = "com.google.android.material:material:${Versions.material}"
     const val constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
