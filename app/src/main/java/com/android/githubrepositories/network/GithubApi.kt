@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 internal interface GithubApi {
 
-    @GET("search/repositories?q=language:kotlin&sort=stars&page=1")
+    @GET("search/repositories")
     suspend fun getRepositories(
         @Query("q") query: String,
         @Query("sort") sortMethod: String,

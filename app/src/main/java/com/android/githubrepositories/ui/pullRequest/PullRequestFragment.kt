@@ -60,13 +60,7 @@ class PullRequestFragment : Fragment() {
     }
 
     private fun handlePullRequestListError(failure: Failure) {
-        var errorMessage = ""
-        failure.message?.let { text ->
-            errorMessage = text
-        }
-        failure.resId?.let { res ->
-            errorMessage = getString(res)
-        }
+        val errorMessage = failure.message ?: failure.resId?.let { getString(it) } ?: ""
         Toast.makeText(
             context,
             errorMessage,

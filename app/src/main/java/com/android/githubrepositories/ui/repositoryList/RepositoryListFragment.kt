@@ -52,12 +52,12 @@ internal class RepositoryListFragment : Fragment() {
     }
 
     private fun handleSavedInstances(savedInstanceState: Bundle?) {
+        requestPage = savedInstanceState?.getInt(REQUEST_PAGE_KEY) ?: requestPage
         savedInstanceState?.getParcelableArrayList<RepositoryModel>(LIST_BUNDLE_KEY)?.let {
             repositoryList = it
         } ?: run {
             repositoryViewModel.getRepositories(requestPage)
         }
-        requestPage = savedInstanceState?.getInt(REQUEST_PAGE_KEY) ?: requestPage
     }
 
     private fun setupFields() {
@@ -103,13 +103,7 @@ internal class RepositoryListFragment : Fragment() {
     }
 
     private fun handleRepositoryListError(failure: Failure) {
-        var errorMessage = ""
-        failure.message?.let { text ->
-            errorMessage = text
-        }
-        failure.resId?.let { res ->
-            errorMessage = getString(res)
-        }
+        val errorMessage = failure.message ?: failure.resId?.let { getString(it) } ?: ""
         Toast.makeText(
             context,
             errorMessage,

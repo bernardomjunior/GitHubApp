@@ -20,33 +20,22 @@ internal class GithubService(
         query: String,
         sortMethod: String,
         pageNum: Int
-    ): RepositoriesResponse {
-        return withContext(dispatcher) {
-            safeRequest {
-                (api::getRepositories)(query, sortMethod, pageNum)
-            }
-        }
-    }
+    ) = safeRequest(dispatcher) { api.getRepositories(query, sortMethod, pageNum) }
 
     suspend fun listPullRequests(
         creator: String,
         repository: String
-    ): List<PullRequestResponse> {
-        return withContext(dispatcher) {
-            safeRequest {
-                (api::listPullRequests)(creator, repository)
-            }
-        }
-    }
+    ) = safeRequest(dispatcher) { api.listPullRequests(creator, repository) }
 
 }
 
 @Throws(Exception::class)
 private suspend fun <T> safeRequest(
+    dispatcher: CoroutineDispatcher,
     request: suspend () -> T
 ): T {
     return try {
-        request()
+        withContext(dispatcher) { request() }
     } catch (err: Exception) {
         throw when (err) {
             is IOException -> {

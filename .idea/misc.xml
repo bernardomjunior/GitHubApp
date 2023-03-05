@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/BernardoJr/Desktop/Projetos/GitHubApp/app/src/main/res/drawable/ic_repo_forked.xml" value="0.196" />
+        <entry key="..\:/Users/BernardoJr/Desktop/Projetos/GitHubApp/app/src/main/res/drawable/ic_star.xml" value="0.196" />
+        <entry key="..\:/Users/BernardoJr/Desktop/Projetos/GitHubApp/app/src/main/res/drawable/list_item_divider.xml" value="0.196" />
+        <entry key="..\:/Users/BernardoJr/Desktop/Projetos/GitHubApp/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/BernardoJr/Desktop/Projetos/GitHubApp/app/src/main/res/layout/fragment_pull_request.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/BernardoJr/Desktop/Projetos/GitHubApp/app/src/main/res/layout/fragment_repository_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/BernardoJr/Desktop/Projetos/GitHubApp/app/src/main/res/layout/list_item_pull_request.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/BernardoJr/Desktop/Projetos/GitHubApp/app/src/main/res/layout/list_item_repository.xml" value="0.25" />
         <entry key="..\:/Users/Bernardojr/AndroidStudioProjects/GitHubRepositories/app/src/main/res/drawable/ic_repo_forked.xml" value="0.1775" />
         <entry key="..\:/Users/Bernardojr/AndroidStudioProjects/GitHubRepositories/app/src/main/res/drawable/ic_star.xml" value="0.1775" />
         <entry key="..\:/Users/Bernardojr/AndroidStudioProjects/GitHubRepositories/app/src/main/res/drawable/list_item_divider.xml" value="0.1775" />
